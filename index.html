@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#070811">
+<title>PlayBrowse</title>
+<style>
+:root{color-scheme:dark;--bg:#070811;--panel:#111428;--line:#292b50;--text:#f5f6ff;--muted:#a1a7c7;--blue:#4d8dff;--purple:#a45cff}
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}body{background:radial-gradient(ellipse at 50% 0%,#30205c 0,transparent 42%),var(--bg)}button,input{font:inherit}button{cursor:pointer}.shell{max-width:1200px;margin:auto;padding:0 18px;min-height:100vh;display:flex;flex-direction:column}.top{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:13px 0;border-bottom:1px solid #ffffff18}.brand{display:flex;align-items:center;gap:9px;font-weight:850;font-size:19px;white-space:nowrap}.logo{width:34px;height:34px;display:grid;place-items:center;border-radius:11px;background:linear-gradient(135deg,var(--blue),var(--purple));box-shadow:0 0 25px #8d63ff55}.accent{color:#b69aff}.nav{display:flex;align-items:center;gap:7px;flex:1;justify-content:flex-end}.nav button,.toolbar button{background:#12152a;color:#e9eaff;border:1px solid var(--line);border-radius:10px;padding:9px 11px}.nav button.active{border-color:#8b78ff;background:#201a3d}.hero{text-align:center;padding:55px 0 38px}.eyebrow{color:#aeb7e8;font-size:11px;font-weight:800;letter-spacing:2px}.dot{display:inline-block;background:#62e8ff;width:7px;height:7px;border-radius:50%;margin-right:7px;box-shadow:0 0 12px #62e8ff}.hero h1{font-size:clamp(38px,6vw,64px);line-height:1.05;letter-spacing:-2px;margin:17px 0 12px}.gradient{background:linear-gradient(90deg,#65aaff,#b180ff,#e18aff);background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent}.sub{color:var(--muted);margin:0 0 24px}.search{display:flex;align-items:center;gap:9px;max-width:720px;margin:auto;background:#111429;border:1px solid #6259bd;border-radius:16px;padding:7px 8px 7px 14px;box-shadow:0 0 0 5px #6b55ff10,0 15px 55px #3521a833}.search span{font-size:22px;color:#a9a0ff}.search input{flex:1;min-width:0;background:transparent;color:white;border:0;outline:0;padding:10px 0}.go{border:0;border-radius:10px;background:linear-gradient(135deg,var(--blue),var(--purple));color:white;font-size:21px;width:43px;height:43px}.shortcuts{display:flex;gap:9px;justify-content:center;flex-wrap:wrap;margin:23px 0 38px}.shortcut{display:flex;gap:8px;align-items:center;border:1px solid var(--line);background:#101326;border-radius:12px;padding:10px 13px;color:#eef0ff}.badge{width:25px;height:25px;border-radius:8px;display:grid;place-items:center;background:#202542;font-weight:900}.features{display:grid;grid-template-columns:repeat(3,1fr);gap:13px;text-align:left}.feature{background:linear-gradient(145deg,#13162c,#0c0e1c);border:1px solid var(--line);border-radius:16px;padding:18px}.feature .symbol{font-size:23px;color:#80aaff}.feature h3{font-size:14px;margin:8px 0 6px}.feature p{font-size:12px;line-height:1.5;color:var(--muted);margin:0}.browser{padding:18px 0;flex:1;min-height:65vh}.toolbar{display:flex;align-items:center;gap:7px;padding:10px;background:#101326;border:1px solid var(--line);border-radius:15px;margin-bottom:12px}.toolbar button{padding:8px 11px}.address{display:flex;flex:1;min-width:0;background:#080b18;border:1px solid #38365e;border-radius:10px;padding:0 10px;align-items:center}.address input{width:100%;min-width:0;background:transparent;border:0;outline:0;color:#fff;padding:10px 0}.framewrap{position:relative;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:white;height:calc(100vh - 200px);min-height:420px}.framewrap iframe{width:100%;height:100%;border:0;background:white}.framehint{display:none;background:#111428;color:#dce2ff;padding:10px 13px;font-size:12px;border:1px solid var(--line);border-radius:10px;margin-bottom:10px;line-height:1.5}.framehint.show{display:block}.framehint a{color:#9bbaff}.status{font-size:11px;color:var(--muted);padding:10px 2px}.hidden{display:none!important}footer{display:flex;justify-content:space-between;gap:10px;padding:17px 0;border-top:1px solid #ffffff18;color:#747d9e;font-size:10px;letter-spacing:.8px}
+@media(max-width:700px){.shell{padding:0 12px}.top{align-items:flex-start}.nav{justify-content:flex-start;flex-wrap:wrap}.hero{padding-top:43px}.features{grid-template-columns:1fr}.feature{padding:15px}.toolbar{flex-wrap:wrap}.address{order:1;flex-basis:100%}.framewrap{height:65vh;min-height:350px}.hero h1{letter-spacing:-1.2px}}
+</style>
+</head>
+<body>
+<div class="shell">
+<header class="top">
+  <div class="brand"><span class="logo">P</span><span>Play<span class="accent">Browse</span></span></div>
+  <nav class="nav"><button id="homeBtn" class="active">Home</button><button id="newTabBtn">New tab</button><button id="bookmarkBtn">☆ Save</button></nav>
+</header>
+<section id="home" class="hero">
+  <div class="eyebrow"><span class="dot"></span> YOUR GAMING GATEWAY</div>
+  <h1>Explore beyond<br><span class="gradient">the ordinary.</span></h1>
+  <p class="sub">Search the web or enter a website address.</p>
+  <form id="homeSearch" class="search"><span>⌕</span><input id="homeAddress" placeholder="Search Google or enter a URL" aria-label="Search Google or enter a URL"><button class="go" type="submit">➜</button></form>
+  <div class="shortcuts">
+    <button class="shortcut" data-url="https://www.google.com"><span class="badge" style="color:#80aaff">G</span>Google</button>
+    <button class="shortcut" data-url="https://www.youtube.com"><span class="badge" style="color:#ff6c6c">▶</span>YouTube</button>
+    <button class="shortcut" data-url="https://www.roblox.com"><span class="badge" style="color:#c6a5ff">R</span>Roblox</button>
+    <button class="shortcut" data-url="https://bloxd.io"><span class="badge" style="color:#65e8ff">✧</span>Bloxd.io</button>
+  </div>
+  <div class="features"><article class="feature"><div class="symbol">⌁</div><h3>Search and explore</h3><p>Search Google or type a website address.</p></article><article class="feature"><div class="symbol" style="color:#c18aff">◈</div><h3>Gaming vibe</h3><p>A black, blue, and purple browser interface.</p></article><article class="feature"><div class="symbol" style="color:#65e8ff">↗</div><h3>In-app view</h3><p>Websites that permit embedding can open below.</p></article></div>
+</section>
+<section id="browser" class="browser hidden">
+  <div class="toolbar">
+    <button id="back" title="Back">←</button><button id="forward" title="Forward">→</button><button id="reload" title="Reload">⟳</button><button id="homeSmall" title="Home">⌂</button>
+    <form id="navSearch" class="address"><input id="navAddress" placeholder="Search Google or enter a URL" aria-label="Address bar"><button class="go" type="submit">➜</button></form>
+    <button id="openExternal" title="Open in full browser">↗</button>
+  </div>
+  <div id="framehint" class="framehint">Some websites block being displayed inside another app, so they may appear blank here. Use <a id="externalLink" href="#" target="_blank" rel="noopener">Open this site in your browser ↗</a> to visit it fully.</div>
+  <div class="framewrap"><iframe id="webframe" title="Website view" referrerpolicy="strict-origin-when-cross-origin" allow="fullscreen; autoplay; clipboard-read; clipboard-write"></iframe></div>
+  <div id="status" class="status">Enter a website or search above.</div>
+</section>
+<footer><span>PLAYBROWSE • PREVIEW</span><span>Gaming-themed web explorer</span></footer>
+</div>
+<script>
+(function(){
+const $=id=>document.getElementById(id);let currentUrl="", historyStack=[],historyIndex=-1;
+function resolve(raw){let s=raw.trim();if(!s)return "";if(/^https?:\\/\\//i.test(s))return s;if(!s.includes(" ")&&(/^(localhost|[\\w-]+\\.[a-z]{2,})(:\\d+)?([/?#].*)?$/i.test(s)))return "https://"+s;return "https://www.google.com/search?q="+encodeURIComponent(s)}
+function showBrowser(){ $("home").classList.add("hidden");$("browser").classList.remove("hidden");$("homeBtn").classList.remove("active")}
+function showHome(){$("browser").classList.add("hidden");$("home").classList.remove("hidden");$("homeBtn").classList.add("active")}
+function navigate(raw,push=true){const url=resolve(raw);if(!url)return;showBrowser();currentUrl=url;$("navAddress").value=url;$("externalLink").href=url;$("framehint").classList.remove("show");$("status").textContent="Trying to open "+url+" …";$("webframe").src=url;if(push){historyStack=historyStack.slice(0,historyIndex+1);historyStack.push(url);historyIndex=historyStack.length-1}try{localStorage.setItem("pb_last_url",url)}catch(e){}}
+$("homeSearch").addEventListener("submit",e=>{e.preventDefault();navigate($("homeAddress").value)});
+$("navSearch").addEventListener("submit",e=>{e.preventDefault();navigate($("navAddress").value)});
+document.querySelectorAll("[data-url]").forEach(b=>b.addEventListener("click",()=>navigate(b.dataset.url)));
+$("homeBtn").addEventListener("click",showHome);$("homeSmall").addEventListener("click",showHome);
+$("newTabBtn").addEventListener("click",()=>{$("homeAddress").value="";showHome();$("homeAddress").focus()});
+$("reload").addEventListener("click",()=>{if(currentUrl){$("webframe").src=currentUrl;$("status").textContent="Reloading "+currentUrl}});
+$("back").addEventListener("click",()=>{if(historyIndex>0){historyIndex--;navigate(historyStack[historyIndex],false)}else $("status").textContent="No previous page in this session."});
+$("forward").addEventListener("click",()=>{if(historyIndex<historyStack.length-1){historyIndex++;navigate(historyStack[historyIndex],false)}else $("status").textContent="No next page in this session."});
+$("openExternal").addEventListener("click",()=>{if(currentUrl)window.open(currentUrl,"_blank","noopener")});
+$("bookmarkBtn").addEventListener("click",()=>{if(!currentUrl){alert("Open a website first, then tap Save.");return}let a=[];try{a=JSON.parse(localStorage.getItem("pb_bookmarks")||"[]")}catch(e){}if(!a.includes(currentUrl))a.unshift(currentUrl);localStorage.setItem("pb_bookmarks",JSON.stringify(a.slice(0,50)));$("status").textContent="Saved bookmark: "+currentUrl});
+$("webframe").addEventListener("load",()=>{if(currentUrl){$("status").textContent="Page loaded (some sites may restrict embedded viewing).";setTimeout(()=>$("framehint").classList.add("show"),1800)}});
+$("webframe").addEventListener("error",()=>{$("framehint").classList.add("show");$("status").textContent="This site may block embedded viewing. Try Open in full browser."});
+try{const last=localStorage.getItem("pb_last_url");if(last)$("homeAddress").placeholder="Last visited: "+last}catch(e){}
+})();
+</script>
+</body></html>
