@@ -1,6 +1,8 @@
 <!doctype html>
 <html lang="en">
 <head>
+  <link rel="manifest" href="./manifest.json">
+<meta name="theme-color" content="#3985ff">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#090b16">
@@ -82,5 +84,13 @@ input{min-width:0;flex:1;background:transparent;color:var(--text);border:0;outli
   });
 })();
 </script>
+  <script>
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("./sw.js")
+      .catch(error => console.error("Service worker error:", error));
+  });
+}
+  </script>
 </body>
 </html>
